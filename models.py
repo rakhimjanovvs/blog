@@ -8,6 +8,7 @@ class Post(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(String(100))
     body: Mapped[str] = mapped_column(Text)
+    views: Mapped[int] = mapped_column(default=0, server_default="0")
 
     comments: Mapped[list["Comment"]] = relationship(
         back_populates="post", cascade="all, delete-orphan"

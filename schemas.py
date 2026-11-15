@@ -18,6 +18,7 @@ class PostRead(BaseModel):
     id: int
     title: str
     body: str
+    views: int
 
 class CommentCreate(BaseModel):
     text: str = Field(min_length=3)
